@@ -18,30 +18,43 @@ class Homepage extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
         title: 'my new App',
-        home:
-        Scaffold(appBar: AppBar(title: Text("Home Page")),
-            body:
-            ListView.builder(
-
-              itemCount: 10,
-                itemBuilder:(BuildContext context,int index)
-                    {
-                      return Column(
-                        children: [
-                          ListTile(
-                            leading: CircleAvatar(
-                              child: Text("F"),
-                            ),
-                            title: Text("Learn Flutter"),
-                            subtitle: Text("Fahamin"),
-                          )
-                        ],
-                      );
-
-                    }
-            )
+        home: Scaffold(
+          appBar: AppBar(title: Text("Home Page")),
+          drawer: Drawer(
+            child: ListView(
+              children: [
+                Stack(
+                  children: [
+                    Image.network(
+                        "https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1185382671?s=612x612"),
+                    Positioned(
+                      left: 30,
+                      bottom: 60,
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        child: Image.asset("assets/images/itn.png"),
+                      ),
+                    ),
+                    Positioned(left: 30, bottom: 40, child: Text("Fahamin"))
+                  ],
+                ),
+                _createListTile(),
+                _createListTile(),
+                _createListTile()
+              ],
+            ),
+          ),
         ));
     throw UnimplementedError();
+  }
+
+  Widget _createListTile() {
+    return ListTile(
+      leading: Icon(Icons.home),
+      title: Text("Camera"),
+      onTap: () {},
+    );
   }
 
   Widget _rowMaker() {
