@@ -1,71 +1,41 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app/page1.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "My App",
-    home: Homepage(),
+    home: Dashboard(),
   ));
 }
 
-class Homepage extends StatelessWidget {
+class Dashboard extends StatefulWidget {
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
-    String _text =
-        " helo Fahamin slkdfjsijfewfnshfoesfwpfwvdsk;lkdj;idfi locve you what are you doing";
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dashboard"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
 
-    // TODO: implement build
-    return MaterialApp(
-        title: 'my new App',
-        home: Scaffold(
-          appBar: AppBar(title: Text("Home Page")),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                Stack(
-                  children: [
-                    Image.network(
-                        "https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1185382671?s=612x612"),
-                    Positioned(
-                      left: 30,
-                      bottom: 60,
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        child: Image.asset("assets/images/itn.png"),
-                      ),
-                    ),
-                    Positioned(left: 30, bottom: 40, child: Text("Fahamin"))
-                  ],
-                ),
-                _createListTile(),
-                _createListTile(),
-                _createListTile()
-              ],
-            ),
-          ),
-        ));
-    throw UnimplementedError();
-  }
+          Text("DashBorad"),
+          RaisedButton(
 
-  Widget _createListTile() {
-    return ListTile(
-      leading: Icon(Icons.home),
-      title: Text("Camera"),
-      onTap: () {},
-    );
-  }
-
-  Widget _rowMaker() {
-    return Expanded(
-      child: Container(
-        height: 50,
-        width: 50,
-        decoration: BoxDecoration(
-          color: Colors.green,
-        ),
-        child: Icon(Icons.ac_unit),
+              child: Text("Go to page 1 "),
+              onPressed: () {
+                var mes = "fahamin";
+                Route route = MaterialPageRoute(builder: (context) => PageOne(mes));
+              Navigator.push(context, route);
+              })
+        ],
       ),
     );
   }
