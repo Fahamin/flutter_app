@@ -22,7 +22,8 @@ class _DashboardState extends State<Dashboard> {
       appBar: AppBar(
         title: Text("Dashboard"),
       ),
-      body: Column(
+      body: Center(
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
@@ -37,6 +38,6 @@ class _DashboardState extends State<Dashboard> {
               })
         ],
       ),
-    );
+    ));
   }
 }

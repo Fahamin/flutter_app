@@ -23,7 +23,8 @@ class _PageTwoState extends State<PageTwo> {
       appBar: AppBar(
         title: Text("PageTwo"),
       ),
-      body: Column(
+      body: Center(
+      child: Column(
 
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,6 +40,6 @@ class _PageTwoState extends State<PageTwo> {
               })
         ],
       ),
-    );
+    ));
   }
 }
