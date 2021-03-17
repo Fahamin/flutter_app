@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app/UITest.dart';
 import 'package:flutter_app/page1.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "My App",
-    home: Dashboard(),
+    home: MyHomePage(),
   ));
 }
 
