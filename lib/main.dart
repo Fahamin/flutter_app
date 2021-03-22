@@ -4,10 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_app/UITest.dart';
 import 'package:flutter_app/page1.dart';
 
+import 'BotomNav.dart';
+
 void main() {
   runApp(MaterialApp(
     title: "My App",
-    home: MyHomePage(),
+    home: Home(),
   ));
 }
 
